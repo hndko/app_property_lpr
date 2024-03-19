@@ -7,4 +7,4 @@ use Illuminate\Support\Facades\Route;
  * Route Frontend
  */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('/');
