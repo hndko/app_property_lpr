@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'title' => ''
+            'title' => 'Ladang Padi Resor'
         ];
 
         return view('frontend.home', $data);
