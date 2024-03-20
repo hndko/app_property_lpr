@@ -46,6 +46,30 @@
                             Doloremque, reprehenderit cupiditate error laudantium qui, esse
                             quam debitis, eum cumque perferendis, illum harum expedita.
                         </p>
+                        <p class="text-black-50">
+                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
+                            iste reiciendis porro tenetur in, repudiandae amet libero.
+                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
+                            quam debitis, eum cumque perferendis, illum harum expedita.
+                        </p>
+                        <p class="text-black-50">
+                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
+                            iste reiciendis porro tenetur in, repudiandae amet libero.
+                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
+                            quam debitis, eum cumque perferendis, illum harum expedita.
+                        </p>
+                        <p class="text-black-50">
+                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
+                            iste reiciendis porro tenetur in, repudiandae amet libero.
+                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
+                            quam debitis, eum cumque perferendis, illum harum expedita.
+                        </p>
+                        <p class="text-black-50">
+                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
+                            iste reiciendis porro tenetur in, repudiandae amet libero.
+                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
+                            quam debitis, eum cumque perferendis, illum harum expedita.
+                        </p>
 
                         <div class="d-block agent-box p-5 text-center">
                             <div class="img mb-4">
@@ -68,6 +92,19 @@
                                         <a href="#"><span class="icon-linkedin"></span></a>
                                     </li>
                                 </ul>
+                            </div>
+                            <hr>
+                            <div class="row g-2">
+                                <div class="col">
+                                    <button class="btn btn-outline-dark w-100">
+                                        <i class="fab fa-whatsapp fs-5"></i>
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-outline-dark w-100">
+                                        <i class="fas fa-phone-alt fs-6"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
