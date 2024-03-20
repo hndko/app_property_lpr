@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use view;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AgentController extends Controller
 {
     public function index()
     {
         $data = [
             'title' => 'Ladang Padi Resor',
-            'pages' => 'Home'
+            'pages' => 'Agent'
         ];
 
-        return view('frontend.home', $data);
+        return view('frontend.agent', $data);
     }
 }

@@ -7,9 +7,9 @@ Aplikasi penjualan apartemen sederhana
 ```bash
   git clone https://github.com/hndko/app_property_lpr.git
   composer Install
+  cp .env.example .env
   php artisan key:generate
   php artisan storage:link
-  cp .env.example .env
 ```
 
 ## Documentation
