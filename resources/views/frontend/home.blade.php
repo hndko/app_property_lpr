@@ -216,7 +216,7 @@
                     <div class="testimonial-slider">
                         <div class="item">
                             <div class="testimonial">
-                                <img src="{{ asset('assets/images/person_1-min.jpg') }}" alt="Image"
+                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
                                     class="img-fluid rounded-circle w-25 mb-4" />
                                 <div class="rate">
                                     <span class="icon-star text-warning"></span>
@@ -239,7 +239,7 @@
 
                         <div class="item">
                             <div class="testimonial">
-                                <img src="{{ asset('assets/images/person_2-min.jpg') }}" alt="Image"
+                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
                                     class="img-fluid rounded-circle w-25 mb-4" />
                                 <div class="rate">
                                     <span class="icon-star text-warning"></span>
@@ -262,7 +262,7 @@
 
                         <div class="item">
                             <div class="testimonial">
-                                <img src="{{ asset('assets/images/person_3-min.jpg') }}" alt="Image"
+                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
                                     class="img-fluid rounded-circle w-25 mb-4" />
                                 <div class="rate">
                                     <span class="icon-star text-warning"></span>
@@ -285,7 +285,7 @@
 
                         <div class="item">
                             <div class="testimonial">
-                                <img src="{{ asset('assets/images/person_4-min.jpg') }}" alt="Image"
+                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
                                     class="img-fluid rounded-circle w-25 mb-4" />
                                 <div class="rate">
                                     <span class="icon-star text-warning"></span>

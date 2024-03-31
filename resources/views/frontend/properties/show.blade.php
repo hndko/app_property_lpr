@@ -23,13 +23,25 @@
         <div class="section">
             <div class="container">
                 <div class="row justify-content-between">
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 mb-4">
                         <div class="img-property-slide-wrap">
                             <div class="img-property-slide">
                                 <img src="{{ asset('assets/images/img_1.jpg') }}" alt="Image" class="img-fluid" />
                                 <img src="{{ asset('assets/images/img_2.jpg') }}" alt="Image" class="img-fluid" />
                                 <img src="{{ asset('assets/images/img_3.jpg') }}" alt="Image" class="img-fluid" />
                             </div>
+                        </div>
+                        <div class="d-block agent-box text-start">
+                            <h2 class="heading text-primary text-decoration-underline">Spesifikasi :</h2>
+                            <table class="table">
+                                <tr>
+                                    <td>Harga</td>
+                                    <td>
+                                        <span class="icon-bed me-2"></span>
+                                        <span class="caption">2 kamar tidur</span>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -39,36 +51,6 @@
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
                             laborum quo quos omnis sed magnam id, ducimus saepe, debitis error
                             earum, iste dicta odio est sint dolorem magni animi tenetur.
-                        </p>
-                        <p class="text-black-50">
-                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
-                            iste reiciendis porro tenetur in, repudiandae amet libero.
-                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
-                            quam debitis, eum cumque perferendis, illum harum expedita.
-                        </p>
-                        <p class="text-black-50">
-                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
-                            iste reiciendis porro tenetur in, repudiandae amet libero.
-                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
-                            quam debitis, eum cumque perferendis, illum harum expedita.
-                        </p>
-                        <p class="text-black-50">
-                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
-                            iste reiciendis porro tenetur in, repudiandae amet libero.
-                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
-                            quam debitis, eum cumque perferendis, illum harum expedita.
-                        </p>
-                        <p class="text-black-50">
-                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
-                            iste reiciendis porro tenetur in, repudiandae amet libero.
-                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
-                            quam debitis, eum cumque perferendis, illum harum expedita.
-                        </p>
-                        <p class="text-black-50">
-                            Perferendis eligendi reprehenderit, assumenda molestias nisi eius
-                            iste reiciendis porro tenetur in, repudiandae amet libero.
-                            Doloremque, reprehenderit cupiditate error laudantium qui, esse
-                            quam debitis, eum cumque perferendis, illum harum expedita.
                         </p>
 
                         <div class="d-block agent-box p-5 text-center">

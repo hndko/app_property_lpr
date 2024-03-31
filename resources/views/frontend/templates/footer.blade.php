@@ -5,11 +5,12 @@
                 <div class="widget">
                     <h3>Contact</h3>
                     <h4>Ladang Padi Resor</h4>
-                    <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+                    <address>Jl.Pengadegan Timur I No.30, Kelurahan Pengadegan, Kecamatan Pancoran, Jakarta Selatan
+                        12770</address>
                     <ul class="list-unstyled links">
-                        <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+                        <li><a href="tel://0217980616">0217980616</a></li>
                         <li>
-                            <a href="mailto:info@mydomain.com">info@mydomain.com</a>
+                            <a href="mailto:aptpancoranriverside@gmail.com">aptpancoranriverside@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -18,7 +19,7 @@
                 <div class="widget">
                     <h3>Sitemap</h3>
                     <ul class="list-unstyled float-start links">
-                        <li><a href="{{ route('/') }}">Home</a></li>
+                        <li><a href="{{ route('/') }}">Beranda</a></li>
                         <li><a href="{{ route('properties') }}">Properti</a></li>
                         <li><a href="{{ route('agent') }}">Agen</a></li>
                         <li><a href="{{ route('contact') }}">Kontak Kami</a></li>
@@ -29,8 +30,8 @@
                 <div class="widget">
                     <h3>Open Hours</h3>
                     <ul class="list-unstyled float-start links">
-                        <li>Senin - Jumat</li>
-                        <li>11:00 AM - 23.00 PM</li>
+                        <li>Senin - Minggu</li>
+                        <li>08.00 - 16.00</li>
                     </ul>
                 </div>
             </div>

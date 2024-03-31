@@ -5,7 +5,7 @@
                 <a href="{{ route('/') }}" class="logo m-0 float-start">Ladang Padi Resor</a>
 
                 <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-                    <li class="{{ $pages === 'Home' ? 'active' : '' }}"><a href="{{ route('/') }}">Home</a></li>
+                    <li class="{{ $pages === 'Home' ? 'active' : '' }}"><a href="{{ route('/') }}">Beranda</a></li>
                     <li class="{{ $pages === 'Properties' ? 'active' : '' }}"><a
                             href="{{ route('properties') }}">Properti</a></li>
                     <li class="{{ $pages === 'Agent' ? 'active' : '' }}"><a href="{{ route('agent') }}">Agen</a></li>
