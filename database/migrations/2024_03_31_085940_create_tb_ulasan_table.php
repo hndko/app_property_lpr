@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_ulasan', function (Blueprint $table) {
-            $table->id();
+            $table->id('ulasan_id');
+            $table->enum('rating', ['1', '2', '3', '4', '5']);
+            $table->string('nama_lengkap', 155);
+            $table->text('text_ulasan');
+            $table->string('jabatan', 155);
             $table->timestamps();
         });
     }

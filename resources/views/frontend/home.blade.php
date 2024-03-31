@@ -214,97 +214,32 @@
                 </div>
                 <div class="testimonial-slider-wrap">
                     <div class="testimonial-slider">
-                        <div class="item">
-                            <div class="testimonial">
-                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
-                                    class="img-fluid rounded-circle w-25 mb-4" />
-                                <div class="rate">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
+                        @if ($ulasan->isEmpty())
+                            <div class="item">
+                                <div class="testimonial">
+                                    <p>Maaf, belum ada ulasan.</p>
                                 </div>
-                                <h3 class="h5 text-primary mb-4">James Smith</h3>
-                                <blockquote>
-                                    <p>
-                                        &ldquo;Jauh di belakang gunung, jauh dari negara Vokalia dan Consonantia, ada
-                                        teks-teks buta. Terpisah mereka hidup di Bookmarksgrove tepat di pantai Semantik,
-                                        lautan bahasa besar.&rdquo;
-                                    </p>
-                                </blockquote>
-                                <p class="text-black-50">Desainer, Co-founder</p>
                             </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="testimonial">
-                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
-                                    class="img-fluid rounded-circle w-25 mb-4" />
-                                <div class="rate">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
+                        @else
+                            @foreach ($ulasan as $ulasanItem)
+                                <div class="item">
+                                    <div class="testimonial">
+                                        <img src="{{ asset('assets/images/default.png') }}" alt="Image"
+                                            class="img-fluid rounded-circle w-25 mb-4" />
+                                        <div class="rate">
+                                            @for ($i = 0; $i < $ulasanItem->rating; $i++)
+                                                <span class="icon-star text-warning"></span>
+                                            @endfor
+                                        </div>
+                                        <h3 class="h5 text-primary mb-4">{{ $ulasanItem->nama_lengkap }}</h3>
+                                        <blockquote>
+                                            <p>&ldquo;{{ $ulasanItem->text_ulasan }}&rdquo;</p>
+                                        </blockquote>
+                                        <p class="text-black-50">{{ $ulasanItem->jabatan }}</p>
+                                    </div>
                                 </div>
-                                <h3 class="h5 text-primary mb-4">Mike Houston</h3>
-                                <blockquote>
-                                    <p>
-                                        &ldquo;Jauh di belakang gunung, jauh dari negara Vokalia dan Consonantia, ada
-                                        teks-teks buta. Terpisah mereka hidup di Bookmarksgrove tepat di pantai Semantik,
-                                        lautan bahasa besar.&rdquo;
-                                    </p>
-                                </blockquote>
-                                <p class="text-black-50">Desainer, Co-founder</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="testimonial">
-                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
-                                    class="img-fluid rounded-circle w-25 mb-4" />
-                                <div class="rate">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                </div>
-                                <h3 class="h5 text-primary mb-4">Cameron Webster</h3>
-                                <blockquote>
-                                    <p>
-                                        &ldquo;Jauh di belakang gunung, jauh dari negara Vokalia dan Consonantia, ada
-                                        teks-teks buta. Terpisah mereka hidup di Bookmarksgrove tepat di pantai Semantik,
-                                        lautan bahasa besar.&rdquo;
-                                    </p>
-                                </blockquote>
-                                <p class="text-black-50">Desainer, Co-founder</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="testimonial">
-                                <img src="{{ asset('assets/images/default.png') }}" alt="Image"
-                                    class="img-fluid rounded-circle w-25 mb-4" />
-                                <div class="rate">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                </div>
-                                <h3 class="h5 text-primary mb-4">Dave Smith</h3>
-                                <blockquote>
-                                    <p>
-                                        &ldquo;Jauh di belakang gunung, jauh dari negara Vokalia dan Consonantia, ada
-                                        teks-teks buta. Terpisah mereka hidup di Bookmarksgrove tepat di pantai Semantik,
-                                        lautan bahasa besar.&rdquo;
-                                    </p>
-                                </blockquote>
-                                <p class="text-black-50">Desainer, Co-founder</p>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

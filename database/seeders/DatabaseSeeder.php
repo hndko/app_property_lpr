@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         // Panggil seeder yang telah dibuat
         $this->call(ContactSeeder::class);
         $this->call(AdministratorUserSeeder::class);
+        $this->call(UlasanSeeder::class);
     }
 }
