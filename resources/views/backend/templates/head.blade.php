@@ -26,6 +26,7 @@
 
 <!-- Vendors CSS -->
 <link rel="stylesheet" href="{{ asset('assets/vendors/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
 
 <!-- Page CSS -->
 <!-- Page -->

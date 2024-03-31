@@ -15,54 +15,54 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-        <li class="menu-item">
-            <a href="" class="menu-link">
+        <li class="menu-item {{ $pages === 'Dashboard' ? 'active' : '' }}">
+            <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Basic">Dashboard</div>
+                <div data-i18n="Basic">Beranda</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ $pages === 'Kota' ? 'active' : '' }}">
             <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-city"></i>
                 <div data-i18n="Basic">Daftar Kota</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ $pages === 'Agent' ? 'active' : '' }}">
             <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-user-detail"></i>
                 <div data-i18n="Basic">Agent</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ $pages === 'Property' ? 'active' : '' }}">
             <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-buildings"></i>
                 <div data-i18n="Basic">Property</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ $pages === 'Kontak Masuk' ? 'active' : '' }}">
             <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-chat"></i>
                 <div data-i18n="Basic">Kontak Masuk</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="" class="menu-link">
+        <li class="menu-item {{ $pages === 'Ulasan' ? 'active' : '' }}">
+            <a href="{{ route('ulasan') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-conversation"></i>
                 <div data-i18n="Basic">Ulasan</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ $master === 'Pengaturan Website' ? 'active' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cog"></i>
                 <div data-i18n="Pengaturan Website">Pengaturan Website</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item {{ $pages === 'Whatsapp' ? 'active' : '' }}">
                     <a href="" class="menu-link">
                         <div data-i18n="Whatsapp">Whatsapp</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{ $pages === 'Pengaturan Umum' ? 'active' : '' }}">
                     <a href="" class="menu-link">
                         <div data-i18n="Pengaturan Umum">Pengaturan Umum</div>
                     </a>
