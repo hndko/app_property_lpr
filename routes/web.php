@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\auth\AuthController as CMSAuthController;
 use App\Http\Controllers\backend\cms\DashboardController as CMSDashboardController;
 use App\Http\Controllers\backend\cms\UlasanController as CMSUlasanController;
+use App\Http\Controllers\backend\cms\KontakMasukController as CMSKontakMasukController;
 use App\Http\Controllers\Frontend\AgentController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -42,6 +43,10 @@ Route::prefix('auth')->group(function () {
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [CMSDashboardController::class, 'index'])->name('dashboard');
+});
+
+Route::prefix('kontak-masuk')->group(function () {
+    Route::get('/', [CMSKontakMasukController::class, 'index'])->name('kontak-masuk');
 });
 
 Route::prefix('ulasan')->group(function () {

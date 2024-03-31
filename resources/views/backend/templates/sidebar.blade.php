@@ -40,7 +40,7 @@
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Kontak Masuk' ? 'active' : '' }}">
-            <a href="" class="menu-link">
+            <a href="{{ route('kontak-masuk') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-chat"></i>
                 <div data-i18n="Basic">Kontak Masuk</div>
             </a>

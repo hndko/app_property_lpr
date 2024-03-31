@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\backend\cms;
 
 use App\Http\Controllers\Controller;
-use App\Models\KontakMasuk;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class KontakMasukController extends Controller
@@ -13,7 +13,14 @@ class KontakMasukController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'title' => 'Kontak Masuk',
+            'master' => null,
+            'pages' => 'Kontak Masuk',
+            'result' => Contact::latest()->get()
+        ];
+
+        return view('backend.cms.kontak_masuk.index', $data);
     }
 
     /**
@@ -35,7 +42,7 @@ class KontakMasukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(KontakMasuk $kontakMasuk)
+    public function show(Contact $contact)
     {
         //
     }
@@ -43,7 +50,7 @@ class KontakMasukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(KontakMasuk $kontakMasuk)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -51,7 +58,7 @@ class KontakMasukController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, KontakMasuk $kontakMasuk)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -59,7 +66,7 @@ class KontakMasukController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(KontakMasuk $kontakMasuk)
+    public function destroy(Contact $contact)
     {
         //
     }
