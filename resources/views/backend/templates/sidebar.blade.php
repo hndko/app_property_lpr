@@ -28,7 +28,7 @@
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Agent' ? 'active' : '' }}">
-            <a href="" class="menu-link">
+            <a href="{{ route('agent') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-user-detail"></i>
                 <div data-i18n="Basic">Agent</div>
             </a>

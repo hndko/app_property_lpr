@@ -10,5 +10,6 @@ class Contact extends Model
     use HasFactory;
 
     protected $table = 'tb_contact';
+    protected $primaryKey = 'contact_id';
     protected $fillable = ['nama_lengkap', 'email', 'subject', 'message'];
 }

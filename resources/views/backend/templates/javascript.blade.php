@@ -17,6 +17,7 @@
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
 <!-- Page JS -->
+<script src="{{ asset('assets/js/pages-account-settings-account.js') }}"></script>
 <script>
     new DataTable('#dataTable');
 </script>

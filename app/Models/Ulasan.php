@@ -11,7 +11,6 @@ class Ulasan extends Model
 
     protected $table = 'tb_ulasan';
     protected $primaryKey = 'ulasan_id';
-
     protected $fillable = [
         'rating',
         'nama_lengkap',

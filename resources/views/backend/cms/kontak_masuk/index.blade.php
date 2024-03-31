@@ -10,7 +10,7 @@
                     <thead>
                         <tr class="text-nowrap">
                             <th>#</th>
-                            <th>Nama _Lengkap</th>
+                            <th>Nama Lengkap</th>
                             <th>Email</th>
                             <th>Subject</th>
                             <th>Message</th>
