@@ -35,7 +35,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('/dashboard'); // Redirect to dashboard or any other route after successful login
+            return redirect()->route('dashboard'); // Redirect to dashboard or any other route after successful login
         } else {
             return redirect()->route('auth.login')->with('error', 'Your email or password is incorrect');
         }

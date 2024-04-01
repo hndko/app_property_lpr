@@ -34,7 +34,7 @@
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Property' ? 'active' : '' }}">
-            <a href="" class="menu-link">
+            <a href="{{ route('property') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-buildings"></i>
                 <div data-i18n="Basic">Property</div>
             </a>

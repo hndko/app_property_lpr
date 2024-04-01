@@ -49,7 +49,7 @@
                         <div class="property-slider-wrap">
                             <div class="property-slider">
                                 <div class="property-item">
-                                    <a href="" class="img">
+                                    <a href="{{ route('properties.show') }}" class="img">
                                         <img src="{{ asset('assets/images/img_1.jpg') }}" alt="Image"
                                             class="img-fluid" />
                                     </a>
@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                                 <div class="property-item">
-                                    <a href="" class="img">
+                                    <a href="{{ route('properties.show') }}" class="img">
                                         <img src="{{ asset('assets/images/img_2.jpg') }}" alt="Image"
                                             class="img-fluid" />
                                     </a>
@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                                 <div class="property-item">
-                                    <a href="" class="img">
+                                    <a href="{{ route('properties.show') }}" class="img">
                                         <img src="{{ asset('assets/images/img_3.jpg') }}" alt="Image"
                                             class="img-fluid" />
                                     </a>
@@ -118,13 +118,14 @@
                                                     <span class="caption">2 kamar mandi</span>
                                                 </span>
                                             </div>
-                                            <a href="{{ route('properties.show') }}" class="btn btn-primary py-2 px-3">Lihat
+                                            <a href="{{ route('properties.show') }}"
+                                                class="btn btn-primary py-2 px-3">Lihat
                                                 detail</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="property-item">
-                                    <a href="" class="img">
+                                    <a href="{{ route('properties.show') }}" class="img">
                                         <img src="{{ asset('assets/images/img_4.jpg') }}" alt="Image"
                                             class="img-fluid" />
                                     </a>
@@ -311,7 +312,7 @@
                     </div>
                     <div class="col-6 col-sm-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="600">
                         <div class="counter-wrap mb-5 mb-lg-0">
-                            <span class="number"><span class="countup text-primary">7191</span></span>
+                            <span class="number"><span class="countup text-primary">{{ $agentCount }}</span></span>
                             <span class="caption text-black-50">Jumlah Agen</span>
                         </div>
                     </div>

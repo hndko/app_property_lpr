@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Frontend;
 
 use view;
+use App\Models\Agent;
+use App\Models\Ulasan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Ulasan;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,8 @@ class HomeController extends Controller
         $data = [
             'title' => 'Ladang Padi Resor',
             'pages' => 'Home',
-            'ulasan' => Ulasan::latest()->limit(20)->get()
+            'ulasan' => Ulasan::latest()->limit(20)->get(),
+            'agentCount' => Agent::all()->count()
         ];
 
         return view('frontend.home', $data);

@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\cms\UlasanController as CMSUlasanController;
 use App\Http\Controllers\backend\cms\KontakMasukController as CMSKontakMasukController;
 use App\Http\Controllers\backend\cms\AgentController as CMSAgentController;
 use App\Http\Controllers\backend\cms\KotaController as CMSKotaController;
+use App\Http\Controllers\backend\cms\PropertyController as CMSPropertyController;
 use App\Http\Controllers\Frontend\AgentController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -28,10 +29,10 @@ Route::prefix('contact')->group(function () {
     Route::post('/', [ContactController::class, 'store'])->name('contact.store');
 });
 
-Route::get('agent', [AgentController::class, 'index'])->name('agent');
+Route::get('agent-properti', [AgentController::class, 'index'])->name('agent-properti');
 
 /*******************************************************/
-/* Route Backendp
+/* Route Backend
 /*******************************************************/
 
 Route::prefix('auth')->group(function () {
@@ -43,32 +44,52 @@ Route::prefix('auth')->group(function () {
     Route::post('logout', [CMSAuthController::class, 'logout'])->name('auth.logout');
 });
 
-Route::prefix('dashboard')->group(function () {
-    Route::get('/', [CMSDashboardController::class, 'index'])->name('dashboard');
-});
+Route::prefix('cms')->group(function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', [CMSDashboardController::class, 'index'])->name('dashboard');
+    });
 
-Route::prefix('kota')->group(function () {
-    Route::get('/', [CMSKotaController::class, 'index'])->name('kota');
-    Route::get('create', [CMSKotaController::class, 'create'])->name('kota.create');
-    Route::post('store', [CMSKotaController::class, 'store'])->name('kota.store');
-    Route::get('edit/{id}', [CMSKotaController::class, 'edit'])->name('kota.edit');
-    Route::put('update/{id}', [CMSKotaController::class, 'update'])->name('kota.update');
-    Route::delete('destroy/{id}', [CMSKotaController::class, 'destroy'])->name('kota.destroy');
-});
+    Route::prefix('kota')->group(function () {
+        Route::get('/', [CMSKotaController::class, 'index'])->name('kota');
+        Route::get('create', [CMSKotaController::class, 'create'])->name('kota.create');
+        Route::post('store', [CMSKotaController::class, 'store'])->name('kota.store');
+        Route::get('edit/{id}', [CMSKotaController::class, 'edit'])->name('kota.edit');
+        Route::put('update/{id}', [CMSKotaController::class, 'update'])->name('kota.update');
+        Route::delete('destroy/{id}', [CMSKotaController::class, 'destroy'])->name('kota.destroy');
+    });
 
-Route::prefix('agent')->group(function () {
-    Route::get('/', [CMSAgentController::class, 'index'])->name('agent');
-    Route::get('create', [CMSAgentController::class, 'create'])->name('agent.create');
-    Route::post('store', [CMSAgentController::class, 'store'])->name('agent.store');
-    Route::get('edit/{id}', [CMSAgentController::class, 'edit'])->name('agent.edit');
-    Route::put('update/{id}', [CMSAgentController::class, 'update'])->name('agent.update');
-    Route::delete('destroy/{id}', [CMSAgentController::class, 'destroy'])->name('agent.destroy');
-});
+    Route::prefix('agent')->group(function () {
+        Route::get('/', [CMSAgentController::class, 'index'])->name('agent');
+        Route::get('create', [CMSAgentController::class, 'create'])->name('agent.create');
+        Route::post('store', [CMSAgentController::class, 'store'])->name('agent.store');
+        Route::get('edit/{id}', [CMSAgentController::class, 'edit'])->name('agent.edit');
+        Route::put('update/{id}', [CMSAgentController::class, 'update'])->name('agent.update');
+        Route::delete('destroy/{id}', [CMSAgentController::class, 'destroy'])->name('agent.destroy');
+    });
 
-Route::prefix('kontak-masuk')->group(function () {
-    Route::get('/', [CMSKontakMasukController::class, 'index'])->name('kontak-masuk');
-});
+    Route::prefix('agent')->group(function () {
+        Route::get('/', [CMSAgentController::class, 'index'])->name('agent');
+        Route::get('create', [CMSAgentController::class, 'create'])->name('agent.create');
+        Route::post('store', [CMSAgentController::class, 'store'])->name('agent.store');
+        Route::get('edit/{id}', [CMSAgentController::class, 'edit'])->name('agent.edit');
+        Route::put('update/{id}', [CMSAgentController::class, 'update'])->name('agent.update');
+        Route::delete('destroy/{id}', [CMSAgentController::class, 'destroy'])->name('agent.destroy');
+    });
 
-Route::prefix('ulasan')->group(function () {
-    Route::get('/', [CMSUlasanController::class, 'index'])->name('ulasan');
+    Route::prefix('property')->group(function () {
+        Route::get('/', [CMSPropertyController::class, 'index'])->name('property');
+        Route::get('create', [CMSPropertyController::class, 'create'])->name('property.create');
+        Route::post('store', [CMSPropertyController::class, 'store'])->name('property.store');
+        Route::get('edit/{id}', [CMSPropertyController::class, 'edit'])->name('property.edit');
+        Route::put('update/{id}', [CMSPropertyController::class, 'update'])->name('property.update');
+        Route::delete('destroy/{id}', [CMSPropertyController::class, 'destroy'])->name('property.destroy');
+    });
+
+    Route::prefix('kontak-masuk')->group(function () {
+        Route::get('/', [CMSKontakMasukController::class, 'index'])->name('kontak-masuk');
+    });
+
+    Route::prefix('ulasan')->group(function () {
+        Route::get('/', [CMSUlasanController::class, 'index'])->name('ulasan');
+    });
 });

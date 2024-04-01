@@ -8,7 +8,8 @@
                     <li class="{{ $pages === 'Home' ? 'active' : '' }}"><a href="{{ route('/') }}">Beranda</a></li>
                     <li class="{{ $pages === 'Properties' ? 'active' : '' }}"><a
                             href="{{ route('properties') }}">Properti</a></li>
-                    <li class="{{ $pages === 'Agent' ? 'active' : '' }}"><a href="{{ route('agent') }}">Agen</a></li>
+                    <li class="{{ $pages === 'Agent' ? 'active' : '' }}"><a
+                            href="{{ route('agent-properti') }}">Agen</a></li>
                     <li class="{{ $pages === 'Contact' ? 'active' : '' }}"><a href="{{ route('contact') }}">Kontak
                             Kami</a></li>
                 </ul>
