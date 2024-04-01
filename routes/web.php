@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\cms\DashboardController as CMSDashboardControll
 use App\Http\Controllers\backend\cms\UlasanController as CMSUlasanController;
 use App\Http\Controllers\backend\cms\KontakMasukController as CMSKontakMasukController;
 use App\Http\Controllers\backend\cms\AgentController as CMSAgentController;
+use App\Http\Controllers\backend\cms\KotaController as CMSKotaController;
 use App\Http\Controllers\Frontend\AgentController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -44,6 +45,15 @@ Route::prefix('auth')->group(function () {
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [CMSDashboardController::class, 'index'])->name('dashboard');
+});
+
+Route::prefix('kota')->group(function () {
+    Route::get('/', [CMSKotaController::class, 'index'])->name('kota');
+    Route::get('create', [CMSKotaController::class, 'create'])->name('kota.create');
+    Route::post('store', [CMSKotaController::class, 'store'])->name('kota.store');
+    Route::get('edit/{id}', [CMSKotaController::class, 'edit'])->name('kota.edit');
+    Route::put('update/{id}', [CMSKotaController::class, 'update'])->name('kota.update');
+    Route::delete('destroy/{id}', [CMSKotaController::class, 'destroy'])->name('kota.destroy');
 });
 
 Route::prefix('agent')->group(function () {

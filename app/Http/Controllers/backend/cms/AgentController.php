@@ -74,7 +74,7 @@ class AgentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Agent $agent)
+    public function show(String $id)
     {
         //
     }

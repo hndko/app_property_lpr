@@ -37,8 +37,67 @@
                                 <tr>
                                     <td>Harga</td>
                                     <td>
-                                        <span class="icon-bed me-2"></span>
-                                        <span class="caption">2 kamar tidur</span>
+                                        <span class="caption">Rp 3.000.000.000</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sertifikat</td>
+                                    <td>
+                                        <span class="caption">SHM</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Kondisi</td>
+                                    <td>
+                                        <span class="caption">Cukup Bagus</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Luas Tanah</td>
+                                    <td>
+                                        <span class="caption">432m<sup>2</sup></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Luas Bangunan</td>
+                                    <td>
+                                        <span class="caption">432m<sup>2</sup></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat</td>
+                                    <td>
+                                        <span class="caption">Jl Kedoya Barat</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Kelengkapan</td>
+                                    <td>
+                                        <span class="caption">Full Furnished</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jumlah Lantai</td>
+                                    <td>
+                                        <span class="caption">2 Lantai</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Kamar Tidur</td>
+                                    <td>
+                                        <span class="caption">3 Kamar Tidur</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Kamar Mandi</td>
+                                    <td>
+                                        <span class="caption">3 Kamar Mandi</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Listrik</td>
+                                    <td>
+                                        <span class="caption">2200 Watt</span>
                                     </td>
                                 </tr>
                             </table>

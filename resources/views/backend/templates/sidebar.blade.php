@@ -22,7 +22,7 @@
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Kota' ? 'active' : '' }}">
-            <a href="" class="menu-link">
+            <a href="{{ route('kota') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-city"></i>
                 <div data-i18n="Basic">Daftar Kota</div>
             </a>
