@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Property;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PropertiesController extends Controller
 {
@@ -11,7 +12,9 @@ class PropertiesController extends Controller
     {
         $data = [
             'title' => 'Ladang Padi Resor',
-            'pages' => 'Properties'
+            'pages' => 'Properties',
+            'properties' => Property::latest()->limit(15)->get(),
+            'propertiesAll' => Property::paginate(6)
         ];
 
         return view('frontend.properties.index', $data);

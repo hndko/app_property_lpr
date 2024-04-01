@@ -6,6 +6,7 @@ use App\Models\Kota;
 use App\Models\Agent;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -123,9 +124,69 @@ class PropertyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, String $id)
     {
-        //
+        $request->validate([
+            'slug' => [
+                'required',
+                'string',
+                Rule::unique('tb_property', 'slug')->ignore($id, 'property_id'),
+            ],
+            'foto_sampul' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi foto sampul
+            'property_name' => 'required|string|max:155',
+            'harga' => 'required|max:20',
+            'sertifikat' => 'required|string|max:55',
+            'kondisi' => 'required|string|max:55',
+            'luas_tanah' => 'required|max:20',
+            'luas_bangunan' => 'required|max:20',
+            'alamat' => 'required',
+            'kelengkapan' => 'required|string|max:55',
+            'jumlah_lantai' => 'required|max:20',
+            'kamar_tidur' => 'required|max:20',
+            'kamar_mandi' => 'required|max:20',
+            'watt_listrik' => 'required|max:20',
+            'deskripsi' => 'required',
+            'is_status' => 'required',
+        ]);
+
+        // Temukan data property berdasarkan ID
+        $property = Property::findOrFail($id);
+        $property->slug = $request->slug;
+
+        // Cek apakah terdapat file foto_sampul baru yang diunggah
+        if ($request->hasFile('foto_sampul')) {
+            // Hapus file foto_sampul lama jika ada
+            if (Storage::exists('public/images/foto_property/' . $property->foto_sampul)) {
+                Storage::delete('public/images/foto_property/' . $property->foto_sampul);
+            }
+
+            // Simpan foto_sampul baru ke storage/public/images/foto_property dengan nama unik
+            $images = $request->file('foto_sampul');
+            $images->storeAs('public/images/foto_property', $images->hashName());
+
+            // Simpan nama file baru ke dalam database
+            $property->foto_sampul = $images->hashName();
+        }
+
+        $property->property_name = $request->property_name;
+        $property->agent_id = $request->agent_id;
+        $property->kota_id = $request->kota_id;
+        $property->harga = $request->harga;
+        $property->sertifikat = $request->sertifikat;
+        $property->kondisi = $request->kondisi;
+        $property->luas_tanah = $request->luas_tanah;
+        $property->luas_bangunan = $request->luas_bangunan;
+        $property->alamat = $request->alamat;
+        $property->kelengkapan = $request->kelengkapan;
+        $property->jumlah_lantai = $request->jumlah_lantai;
+        $property->kamar_tidur = $request->kamar_tidur;
+        $property->kamar_mandi = $request->kamar_mandi;
+        $property->watt_listrik = $request->watt_listrik;
+        $property->deskripsi = $request->deskripsi;
+        $property->is_status = $request->is_status;
+        $property->save();
+
+        return redirect()->route('property')->with('success', 'Data property berhasil diperbarui.');
     }
 
     /**
@@ -133,6 +194,17 @@ class PropertyController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // Temukan data property berdasarkan ID
+        $property = Property::findOrFail($id);
+
+        // Hapus file foto_property jika ada
+        if (Storage::exists('public/images/foto_property/' . $property->foto_sampul)) {
+            Storage::delete('public/images/foto_property/' . $property->foto_sampul);
+        }
+
+        // Hapus data property dari database
+        $property->delete();
+
+        return redirect()->route('property')->with('success', 'Data property berhasil dihapus.');
     }
 }

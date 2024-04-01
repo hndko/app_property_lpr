@@ -25,12 +25,16 @@
                                 <td>{{ $res->nama_kota }}</td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='{{ route('kota.edit', $res->kota_id) }}'">Ubah</button>
+                                        onclick="window.location.href='{{ route('kota.edit', $res->kota_id) }}'">
+                                        <i class='bx bxs-edit-alt'></i>
+                                    </button>
                                     <form action="{{ route('kota.destroy', $res->kota_id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                            <i class='bx bxs-trash'></i>
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

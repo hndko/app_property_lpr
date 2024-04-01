@@ -20,7 +20,7 @@ class PropertySeeder extends Seeder
         // Seed 10 properties
         for ($i = 0; $i < 10; $i++) {
             // Generate random image
-            $imageContent = file_get_contents('https://picsum.photos/500/250');
+            $imageContent = file_get_contents('https://picsum.photos/500/350');
             $imageName = 'property_' . $i . '.jpg';
             $imagePath = 'public/images/foto_property/' . $imageName;
 

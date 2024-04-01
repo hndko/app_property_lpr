@@ -38,12 +38,16 @@
                                 <td>{{ $res->linked_in === null ? '-' : $res->linked_in }}</td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='{{ route('agent.edit', $res->agent_id) }}'">Ubah</button>
+                                        onclick="window.location.href='{{ route('agent.edit', $res->agent_id) }}'">
+                                        <i class='bx bxs-edit-alt'></i>
+                                    </button>
                                     <form action="{{ route('agent.destroy', $res->agent_id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                            <i class='bx bxs-trash'></i>
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

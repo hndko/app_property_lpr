@@ -14,6 +14,7 @@
                     <thead>
                         <tr class="text-nowrap">
                             <th>#</th>
+                            <th>Picture</th>
                             <th>Nama Properti</th>
                             <th>Kota</th>
                             <th>Agent</th>
@@ -25,18 +26,24 @@
                         @foreach ($result as $index => $res)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
+                                <td><img src="{{ asset('storage/images/foto_property/' . $res->foto_sampul) }}"
+                                        alt="" style="width: 100px"></td>
                                 <td>{{ $res->property_name }}</td>
                                 <td>{{ $res->kota->nama_kota }}</td>
                                 <td>{{ $res->agent->nama_lengkap }}</td>
                                 <td>@rupiahIndo($res->harga)</td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='{{ route('property.edit', $res->property_id) }}'">Ubah</button>
+                                        onclick="window.location.href='{{ route('property.edit', $res->property_id) }}'">
+                                        <i class='bx bxs-edit-alt'></i>
+                                    </button>
                                     <form action="{{ route('property.destroy', $res->property_id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                            <i class='bx bxs-trash'></i>
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

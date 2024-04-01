@@ -29,7 +29,9 @@
                                     <span class="d-none d-sm-block">Reset</span>
                                 </button>
 
-                                <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 2048kb</p>
+                                <p class="text-muted mb-0">Hanya file dengan format JPG, GIF, atau PNG yang diizinkan.</p>
+                                <p class="text-muted mb-0">Ukuran gambar direkomendasikan 500 x 350 pixel dengan maksimum
+                                    ukuran file 2048 KB.</p>
                             </div>
                         </div>
                         @error('foto_sampul')
@@ -192,10 +194,10 @@
                                 <select name="agent_id" id="agent_id"
                                     class="form-select @error('agent_id') is-invalid @enderror" required>
                                     <option value="">--- Choose ---</option>
-                                    @foreach ($agent as $res)
-                                        <option value="{{ $res->agent_id }}"
-                                            {{ old('agent_id') == $res->agent_id ? 'selected' : '' }}>
-                                            {{ $res->nama_lengkap }}</option>
+                                    @foreach ($agent as $agent)
+                                        <option value="{{ $agent->agent_id }}"
+                                            {{ old('agent_id') == $agent->agent_id ? 'selected' : '' }}>
+                                            {{ $agent->nama_lengkap }}</option>
                                     @endforeach
                                 </select>
                                 @error('agent_id')
@@ -209,10 +211,10 @@
                                 <select name="kota_id" id="kota_id"
                                     class="form-select @error('kota_id') is-invalid @enderror" required>
                                     <option value="">--- Choose ---</option>
-                                    @foreach ($kota as $res)
-                                        <option value="{{ $res->kota_id }}"
-                                            {{ old('kota_id') == $res->kota_id ? 'selected' : '' }}>
-                                            {{ $res->nama_kota }}</option>
+                                    @foreach ($kota as $kota)
+                                        <option value="{{ $kota->kota_id }}"
+                                            {{ old('kota_id') == $kota->kota_id ? 'selected' : '' }}>
+                                            {{ $kota->nama_kota }}</option>
                                     @endforeach
                                 </select>
                                 @error('kota_id')

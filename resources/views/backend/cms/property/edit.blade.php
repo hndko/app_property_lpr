@@ -32,7 +32,9 @@
                                     <span class="d-none d-sm-block">Reset</span>
                                 </button>
 
-                                <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 2048kb</p>
+                                <p class="text-muted mb-0">Hanya file dengan format JPG, GIF, atau PNG yang diizinkan.</p>
+                                <p class="text-muted mb-0">Ukuran gambar direkomendasikan 500 x 350 pixel dengan maksimum
+                                    ukuran file 2048 KB.</p>
                             </div>
                         </div>
                         @error('foto_sampul')
@@ -52,7 +54,7 @@
                         <label class="form-label" for="property_name">Nama Properti</label>
                         <input type="text" class="form-control @error('property_name') is-invalid @enderror"
                             name="property_name" id="property_name" placeholder="Property Example 2" autocomplete="off"
-                            value="{{ old('property_name') }}">
+                            value="{{ old('property_name', $res->property_name) }}">
                         @error('property_name')
                             <div class="form-text text-danger">{{ $message }}</div>
                         @enderror
@@ -63,7 +65,7 @@
                                 <label class="form-label" for="harga">Harga</label>
                                 <input type="number" class="form-control @error('harga') is-invalid @enderror"
                                     name="harga" id="harga" placeholder="0" min="0" autocomplete="off"
-                                    value="{{ old('harga') }}">
+                                    value="{{ old('harga', $res->harga) }}">
                                 @error('harga')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -74,7 +76,7 @@
                                 <label class="form-label" for="sertifikat">Sertifikat</label>
                                 <input type="text" class="form-control @error('sertifikat') is-invalid @enderror"
                                     name="sertifikat" id="sertifikat" placeholder="SHM" autocomplete="off"
-                                    value="{{ old('sertifikat') }}">
+                                    value="{{ old('sertifikat', $res->sertifikat) }}">
                                 @error('sertifikat')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -85,7 +87,7 @@
                                 <label class="form-label" for="kondisi">Kondisi</label>
                                 <input type="text" class="form-control @error('kondisi') is-invalid @enderror"
                                     name="kondisi" id="kondisi" placeholder="Cukup Bagus" autocomplete="off"
-                                    value="{{ old('kondisi') }}">
+                                    value="{{ old('kondisi', $res->kondisi) }}">
                                 @error('kondisi')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -98,7 +100,7 @@
                                 <label class="form-label" for="luas_tanah">Luas Tanah</label>
                                 <input type="number" class="form-control @error('luas_tanah') is-invalid @enderror"
                                     name="luas_tanah" id="luas_tanah" placeholder="0" min="0" autocomplete="off"
-                                    value="{{ old('luas_tanah') }}">
+                                    value="{{ old('luas_tanah', $res->luas_tanah) }}">
                                 @error('luas_tanah')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -109,7 +111,7 @@
                                 <label class="form-label" for="luas_bangunan">Luas Bangunan</label>
                                 <input type="number" class="form-control @error('luas_bangunan') is-invalid @enderror"
                                     name="luas_bangunan" id="luas_bangunan" placeholder="0" min="0"
-                                    autocomplete="off" value="{{ old('luas_bangunan') }}">
+                                    autocomplete="off" value="{{ old('luas_bangunan', $res->luas_bangunan) }}">
                                 @error('luas_bangunan')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -120,7 +122,7 @@
                                 <label class="form-label" for="kelengkapan">Kelengkapan</label>
                                 <input type="text" class="form-control @error('kelengkapan') is-invalid @enderror"
                                     name="kelengkapan" id="kelengkapan" placeholder="Full Furnished" autocomplete="off"
-                                    value="{{ old('kelengkapan') }}">
+                                    value="{{ old('kelengkapan', $res->kelengkapan) }}">
                                 @error('kelengkapan')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -131,7 +133,7 @@
                         <label class="form-label" for="alamat">Alamat</label>
                         <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"
                             id="alamat" placeholder="Jl Diponegoro 2" autocomplete="off"
-                            value="{{ old('alamat') }}">
+                            value="{{ old('alamat', $res->alamat) }}">
                         @error('alamat')
                             <div class="form-text text-danger">{{ $message }}</div>
                         @enderror
@@ -142,7 +144,7 @@
                                 <label class="form-label" for="jumlah_lantai">Jumlah Lantai</label>
                                 <input type="number" class="form-control @error('jumlah_lantai') is-invalid @enderror"
                                     name="jumlah_lantai" id="jumlah_lantai" placeholder="0" min="0"
-                                    autocomplete="off" value="{{ old('jumlah_lantai') }}">
+                                    autocomplete="off" value="{{ old('jumlah_lantai', $res->jumlah_lantai) }}">
                                 @error('jumlah_lantai')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -153,7 +155,7 @@
                                 <label class="form-label" for="kamar_tidur">Kamar Tidur</label>
                                 <input type="number" class="form-control @error('kamar_tidur') is-invalid @enderror"
                                     name="kamar_tidur" id="kamar_tidur" placeholder="0" min="0"
-                                    autocomplete="off" value="{{ old('kamar_tidur') }}">
+                                    autocomplete="off" value="{{ old('kamar_tidur', $res->kamar_tidur) }}">
                                 @error('kamar_tidur')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -164,7 +166,7 @@
                                 <label class="form-label" for="kamar_mandi">Kamar Mandi</label>
                                 <input type="number" class="form-control @error('kamar_mandi') is-invalid @enderror"
                                     name="kamar_mandi" id="kamar_mandi" placeholder="0" min="0"
-                                    autocomplete="off" value="{{ old('kamar_mandi') }}">
+                                    autocomplete="off" value="{{ old('kamar_mandi', $res->kamar_mandi) }}">
                                 @error('kamar_mandi')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -175,14 +177,14 @@
                         <label class="form-label" for="watt_listrik">Watt Listrik</label>
                         <input type="number" class="form-control @error('watt_listrik') is-invalid @enderror"
                             name="watt_listrik" id="watt_listrik" placeholder="0" min="0" autocomplete="off"
-                            value="{{ old('watt_listrik') }}">
+                            value="{{ old('watt_listrik', $res->watt_listrik) }}">
                         @error('watt_listrik')
                             <div class="form-text text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="deskripsi">Deskripsi</label>
-                        <textarea id="deskripsi" name="deskripsi" class="@error('deskripsi') is-invalid @enderror">{{ old('deskripsi') }}</textarea>
+                        <textarea id="deskripsi" name="deskripsi" class="@error('deskripsi') is-invalid @enderror">{{ old('deskripsi', $res->deskripsi) }}</textarea>
                         @error('deskripsi')
                             <div class="form-text text-danger">{{ $message }}</div>
                         @enderror
@@ -196,10 +198,10 @@
                                 <select name="agent_id" id="agent_id"
                                     class="form-select @error('agent_id') is-invalid @enderror" required>
                                     <option value="">--- Choose ---</option>
-                                    @foreach ($agent as $res)
-                                        <option value="{{ $res->agent_id }}"
-                                            {{ old('agent_id') == $res->agent_id ? 'selected' : '' }}>
-                                            {{ $res->nama_lengkap }}</option>
+                                    @foreach ($agent as $agent)
+                                        <option value="{{ $agent->agent_id }}"
+                                            {{ old('agent_id', $agent->agent_id) == $agent->agent_id ? 'selected' : '' }}>
+                                            {{ $agent->nama_lengkap }}</option>
                                     @endforeach
                                 </select>
                                 @error('agent_id')
@@ -213,10 +215,10 @@
                                 <select name="kota_id" id="kota_id"
                                     class="form-select @error('kota_id') is-invalid @enderror" required>
                                     <option value="">--- Choose ---</option>
-                                    @foreach ($kota as $res)
-                                        <option value="{{ $res->kota_id }}"
-                                            {{ old('kota_id') == $res->kota_id ? 'selected' : '' }}>
-                                            {{ $res->nama_kota }}</option>
+                                    @foreach ($kota as $kota)
+                                        <option value="{{ $kota->kota_id }}"
+                                            {{ old('kota_id', $kota->kota_id) == $kota->kota_id ? 'selected' : '' }}>
+                                            {{ $kota->nama_kota }}</option>
                                     @endforeach
                                 </select>
                                 @error('kota_id')
@@ -230,8 +232,8 @@
                                 <select name="is_status" id="is_status"
                                     class="form-select @error('is_status') is-invalid @enderror">
                                     <option value="">--- Choose ---</option>
-                                    <option value="1" {{ old('is_status') === '1' ? 'selected' : '' }}>Ready</option>
-                                    <option value="0" {{ old('is_status') === '0' ? 'selected' : '' }}>Sale</option>
+                                    <option value="1" {{ $res->is_status == '1' ? 'selected' : '' }}>Ready</option>
+                                    <option value="0" {{ $res->is_status == '0' ? 'selected' : '' }}>Sale</option>
                                 </select>
                                 @error('is_status')
                                     <div class="form-text text-danger">{{ $message }}</div>

@@ -18,25 +18,25 @@
         <li class="menu-item {{ $pages === 'Dashboard' ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Basic">Beranda</div>
+                <div data-i18n="Beranda">Beranda</div>
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Kota' ? 'active' : '' }}">
             <a href="{{ route('kota') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-city"></i>
-                <div data-i18n="Basic">Daftar Kota</div>
+                <div data-i18n="Daftar Kota">Daftar Kota</div>
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Agent' ? 'active' : '' }}">
             <a href="{{ route('agent') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-user-detail"></i>
-                <div data-i18n="Basic">Agent</div>
+                <div data-i18n="Agent">Agent</div>
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Property' ? 'active' : '' }}">
             <a href="{{ route('property') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-buildings"></i>
-                <div data-i18n="Basic">Property</div>
+                <div data-i18n="Property">Property</div>
             </a>
         </li>
         <li class="menu-item {{ $pages === 'Kontak Masuk' ? 'active' : '' }}">

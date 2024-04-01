@@ -33,7 +33,7 @@
                 <div class="row mb-5 align-items-center">
                     <div class="col-lg-6">
                         <h2 class="font-weight-bold text-primary heading">
-                            Properti Populer
+                            Properti Terbaru
                         </h2>
                     </div>
                     <div class="col-lg-6 text-lg-end">
@@ -48,108 +48,39 @@
                     <div class="col-12">
                         <div class="property-slider-wrap">
                             <div class="property-slider">
-                                <div class="property-item">
-                                    <a href="{{ route('properties.show') }}" class="img">
-                                        <img src="{{ asset('assets/images/img_1.jpg') }}" alt="Image"
-                                            class="img-fluid" />
-                                    </a>
-                                    <div class="property-content">
-                                        <div class="price mb-2"><span>$1,291,000</span></div>
-                                        <div>
-                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                                            <span class="city d-block mb-3">California, USA</span>
-                                            <div class="specs d-flex mb-4">
-                                                <span class="d-block d-flex align-items-center me-3">
-                                                    <span class="icon-bed me-2"></span>
-                                                    <span class="caption">2 kamar tidur</span>
-                                                </span>
-                                                <span class="d-block d-flex align-items-center">
-                                                    <span class="icon-bath me-2"></span>
-                                                    <span class="caption">2 kamar mandi</span>
-                                                </span>
+                                @if ($properties->isEmpty())
+                                    Properti Belum Tersedia
+                                @else
+                                    @foreach ($properties as $property)
+                                        <div class="property-item">
+                                            <a href="{{ route('properties.show', $property->slug) }}" class="img">
+                                                <img src="{{ asset('storage/images/foto_property/' . $property->foto_sampul) }}"
+                                                    alt="Image" class="img-fluid" style="width: 500px; height: 350px;">
+                                            </a>
+                                            <div class="property-content">
+                                                <div class="price mb-2"><span>@rupiahIndo($property->harga)</span></div>
+                                                <div>
+                                                    <span class="d-block mb-2 text-black-50">{{ $property->alamat }}</span>
+                                                    <span class="city d-block mb-3">{{ $property->kota->nama_kota }}</span>
+                                                    <div class="specs d-flex mb-4">
+                                                        <span class="d-block d-flex align-items-center me-3">
+                                                            <span class="icon-bed me-2"></span>
+                                                            <span class="caption">{{ $property->kamar_tidur }} kamar
+                                                                tidur</span>
+                                                        </span>
+                                                        <span class="d-block d-flex align-items-center">
+                                                            <span class="icon-bath me-2"></span>
+                                                            <span class="caption">{{ $property->kamar_mandi }} kamar
+                                                                mandi</span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="{{ route('properties.show', $property->slug) }}"
+                                                        class="btn btn-primary py-2 px-3">Lihat detail</a>
+                                                </div>
                                             </div>
-                                            <a href="{{ route('properties.show') }}" class="btn btn-primary py-2 px-3">Lihat
-                                                detail</a>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="property-item">
-                                    <a href="{{ route('properties.show') }}" class="img">
-                                        <img src="{{ asset('assets/images/img_2.jpg') }}" alt="Image"
-                                            class="img-fluid" />
-                                    </a>
-                                    <div class="property-content">
-                                        <div class="price mb-2"><span>$1,291,000</span></div>
-                                        <div>
-                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                                            <span class="city d-block mb-3">California, USA</span>
-                                            <div class="specs d-flex mb-4">
-                                                <span class="d-block d-flex align-items-center me-3">
-                                                    <span class="icon-bed me-2"></span>
-                                                    <span class="caption">2 kamar tidur</span>
-                                                </span>
-                                                <span class="d-block d-flex align-items-center">
-                                                    <span class="icon-bath me-2"></span>
-                                                    <span class="caption">2 kamar mandi</span>
-                                                </span>
-                                            </div>
-                                            <a href="{{ route('properties.show') }}" class="btn btn-primary py-2 px-3">Lihat
-                                                detail</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-item">
-                                    <a href="{{ route('properties.show') }}" class="img">
-                                        <img src="{{ asset('assets/images/img_3.jpg') }}" alt="Image"
-                                            class="img-fluid" />
-                                    </a>
-                                    <div class="property-content">
-                                        <div class="price mb-2"><span>$1,291,000</span></div>
-                                        <div>
-                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                                            <span class="city d-block mb-3">California, USA</span>
-                                            <div class="specs d-flex mb-4">
-                                                <span class="d-block d-flex align-items-center me-3">
-                                                    <span class="icon-bed me-2"></span>
-                                                    <span class="caption">2 kamar tidur</span>
-                                                </span>
-                                                <span class="d-block d-flex align-items-center">
-                                                    <span class="icon-bath me-2"></span>
-                                                    <span class="caption">2 kamar mandi</span>
-                                                </span>
-                                            </div>
-                                            <a href="{{ route('properties.show') }}"
-                                                class="btn btn-primary py-2 px-3">Lihat
-                                                detail</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-item">
-                                    <a href="{{ route('properties.show') }}" class="img">
-                                        <img src="{{ asset('assets/images/img_4.jpg') }}" alt="Image"
-                                            class="img-fluid" />
-                                    </a>
-                                    <div class="property-content">
-                                        <div class="price mb-2"><span>$1,291,000</span></div>
-                                        <div>
-                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                                            <span class="city d-block mb-3">California, USA</span>
-                                            <div class="specs d-flex mb-4">
-                                                <span class="d-block d-flex align-items-center me-3">
-                                                    <span class="icon-bed me-2"></span>
-                                                    <span class="caption">2 kamar tidur</span>
-                                                </span>
-                                                <span class="d-block d-flex align-items-center">
-                                                    <span class="icon-bath me-2"></span>
-                                                    <span class="caption">2 kamar mandi</span>
-                                                </span>
-                                            </div>
-                                            <a href="{{ route('properties.show') }}"
-                                                class="btn btn-primary py-2 px-3">Lihat
-                                                detail</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    @endforeach
+                                @endif
                             </div>
                             <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
                                 <span class="prev" data-controls="prev" aria-controls="property"
