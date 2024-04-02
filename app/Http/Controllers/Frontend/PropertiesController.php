@@ -20,11 +20,15 @@ class PropertiesController extends Controller
         return view('frontend.properties.index', $data);
     }
 
-    public function show()
+    public function show($slug)
     {
+        $property = Property::where('slug', $slug)->firstOrFail();
+
         $data = [
             'title' => 'Ladang Padi Resor',
-            'pages' => 'Properties'
+            'pages' => 'Properties',
+            'res' => $property,
+            'sliders' => $property->sliders
         ];
 
         return view('frontend.properties.show', $data);

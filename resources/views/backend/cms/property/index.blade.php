@@ -45,6 +45,10 @@
                                             <i class='bx bxs-trash'></i>
                                         </button>
                                     </form>
+                                    <button type="button" class="btn btn-info btn-sm"
+                                        onclick="window.location.href='{{ route('slider', $res->property_id) }}'">
+                                        <i class='bx bx-images'></i>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach

@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\cms\KontakMasukController as CMSKontakMasukCont
 use App\Http\Controllers\backend\cms\AgentController as CMSAgentController;
 use App\Http\Controllers\backend\cms\KotaController as CMSKotaController;
 use App\Http\Controllers\backend\cms\PropertyController as CMSPropertyController;
+use App\Http\Controllers\backend\cms\SliderPropertyController as CMSSliderPropertyController;
 use App\Http\Controllers\Frontend\AgentController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -21,7 +22,7 @@ Route::get('/', [HomeController::class, 'index'])->name('/');
 
 Route::prefix('properties')->group(function () {
     Route::get('/', [PropertiesController::class, 'index'])->name('properties');
-    Route::get('show', [PropertiesController::class, 'show'])->name('properties.show');
+    Route::get('show/{slug}', [PropertiesController::class, 'show'])->name('properties.show');
 });
 
 Route::prefix('contact')->group(function () {
@@ -83,6 +84,15 @@ Route::prefix('cms')->group(function () {
         Route::get('edit/{id}', [CMSPropertyController::class, 'edit'])->name('property.edit');
         Route::put('update/{id}', [CMSPropertyController::class, 'update'])->name('property.update');
         Route::delete('destroy/{id}', [CMSPropertyController::class, 'destroy'])->name('property.destroy');
+
+        Route::prefix('slider')->group(function () {
+            Route::get('/{id}', [CMSSliderPropertyController::class, 'index'])->name('slider');
+            Route::get('create/{id}', [CMSSliderPropertyController::class, 'create'])->name('slider.create'); // Menambahkan parameter ID
+            Route::post('store/{id}', [CMSSliderPropertyController::class, 'store'])->name('slider.store'); // Menambahkan parameter ID
+            Route::get('edit/{id}', [CMSSliderPropertyController::class, 'edit'])->name('slider.edit');
+            Route::put('update/{id}', [CMSSliderPropertyController::class, 'update'])->name('slider.update');
+            Route::delete('destroy/{id}', [CMSSliderPropertyController::class, 'destroy'])->name('slider.destroy');
+        });
     });
 
     Route::prefix('kontak-masuk')->group(function () {

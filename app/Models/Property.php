@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Kota;
 use App\Models\Agent;
+use App\Models\SliderProperty;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -49,5 +50,10 @@ class Property extends Model
     public function kota()
     {
         return $this->belongsTo(Kota::class, 'kota_id', 'kota_id');
+    }
+
+    public function sliders()
+    {
+        return $this->hasMany(SliderProperty::class, 'property_id', 'property_id');
     }
 }
