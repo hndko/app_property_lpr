@@ -33,4 +33,19 @@ class PropertiesController extends Controller
 
         return view('frontend.properties.show', $data);
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $data = [
+            'title' => 'Ladang Padi Resor',
+            'pages' => 'Properties',
+            'properties' => Property::whereHas('kota', function ($query) use ($keyword) {
+                $query->where('nama_kota', 'like', "%$keyword%");
+            })->paginate(6),
+            'keyword' => $keyword
+        ];
+
+        return view('frontend.properties.search', $data);
+    }
 }

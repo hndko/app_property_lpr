@@ -4,13 +4,12 @@
             <div class="col-lg-4">
                 <div class="widget">
                     <h3>Contact</h3>
-                    <h4>Ladang Padi Resor</h4>
-                    <address>Jl.Pengadegan Timur I No.30, Kelurahan Pengadegan, Kecamatan Pancoran, Jakarta Selatan
-                        12770</address>
+                    <h4>{{ $setting->nama_website }}</h4>
+                    <address>{{ $setting->alamat }}</address>
                     <ul class="list-unstyled links">
-                        <li><a href="tel://0217980616">0217980616</a></li>
+                        <li><a href="tel://0217980616">{{ $setting->no_telpon }}</a></li>
                         <li>
-                            <a href="mailto:aptpancoranriverside@gmail.com">aptpancoranriverside@gmail.com</a>
+                            <a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
                         </li>
                     </ul>
                 </div>
@@ -30,8 +29,8 @@
                 <div class="widget">
                     <h3>Open Hours</h3>
                     <ul class="list-unstyled float-start links">
-                        <li>Senin - Minggu</li>
-                        <li>08.00 - 16.00</li>
+                        <li>{{ $setting->day_start }} - {{ $setting->day_end }}</li>
+                        <li>{{ $setting->hours_start }} - {{ $setting->hours_end }}</li>
                     </ul>
                 </div>
             </div>
@@ -40,16 +39,20 @@
                     <h3>Sosial Media</h3>
                     <ul class="list-unstyled social">
                         <li>
-                            <a href="#"><span class="icon-instagram"></span></a>
+                            <a href="https://www.instagram.com/{{ $setting->instagram === null ? '#' : '' }}"><span
+                                    class="icon-instagram"></span></a>
                         </li>
                         <li>
-                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="https://twitter.com/{{ $setting->twitter === null ? '#' : '' }}"><span
+                                    class="icon-twitter"></span></a>
                         </li>
                         <li>
-                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="https://facebook.com/{{ $setting->facebook === null ? '#' : '' }}"><span
+                                    class="icon-facebook"></span></a>
                         </li>
                         <li>
-                            <a href="#"><span class="icon-linkedin"></span></a>
+                            <a href="https://www.linkedin.com/in/{{ $setting->linkedin === null ? '#' : '' }}"><span
+                                    class="icon-linkedin"></span></a>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +70,7 @@
 </div>
 
 <!-- WhatsApp floating button -->
-<a href="https://api.whatsapp.com/send?phone=628123456789&text=Halo%2C%20saya%20memiliki beberapa pertanyaan?"
+<a href="https://api.whatsapp.com/send?phone=62{{ $whatsapp->no_telpon }}&text={{ $whatsapp->text_whatsapp }}"
     class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>

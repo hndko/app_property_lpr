@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(KotaSeeder::class);
         $this->call(AgentSeeder::class);
         $this->call(PropertySeeder::class);
+        $this->call(WhatsappSeeder::class);
+        $this->call(PengaturanUmumSeeder::class);
     }
 }

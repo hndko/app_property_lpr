@@ -32,7 +32,7 @@
                                 @else
                                     @foreach ($res->sliders as $slider)
                                         <img src="{{ asset('storage/images/foto_slider/' . $slider->foto_slider) }}"
-                                            alt="Slider Image" class="img-fluid vh-100">
+                                            alt="Slider Image" class="img-fluid">
                                     @endforeach
                                 @endif
                             </div>
@@ -125,16 +125,20 @@
                                 <div class="meta mb-3">Agen Properti</div>
                                 <ul class="list-unstyled social dark-hover d-flex justify-content-center">
                                     <li class="me-1">
-                                        <a href="{{ $res->agent->instagram }}"><span class="icon-instagram"></span></a>
+                                        <a href="https://www.instagram.com/{{ $res->agent->instagram }}"><span
+                                                class="icon-instagram"></span></a>
                                     </li>
                                     <li class="me-1">
-                                        <a href="{{ $res->agent->twitter }}"><span class="icon-twitter"></span></a>
+                                        <a href="https://twitter.com/{{ $res->agent->twitter }}"><span
+                                                class="icon-twitter"></span></a>
                                     </li>
                                     <li class="me-1">
-                                        <a href="{{ $res->agent->facebook }}"><span class="icon-facebook"></span></a>
+                                        <a href="https://facebook.com/{{ $res->agent->facebook }}"><span
+                                                class="icon-facebook"></span></a>
                                     </li>
                                     <li class="me-1">
-                                        <a href="{{ $res->agent->linkedin }}"><span class="icon-linkedin"></span></a>
+                                        <a href="https://www.linkedin.com/in/{{ $res->agent->linkedin }}"><span
+                                                class="icon-linkedin"></span></a>
                                     </li>
                                 </ul>
                             </div>

@@ -17,10 +17,11 @@
                         <h1 class="heading" data-aos="fade-up">
                             Temukan rumah impian Anda dengan mudah
                         </h1>
-                        <form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                        <form action="{{ route('properties.search') }}" method="GET"
+                            class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
                             data-aos-delay="200">
-                            <input type="text" class="form-control px-4"
-                                placeholder="Kode POS atau Kota Anda. Misalnya, Jakarta" />
+                            <input type="text" name="keyword" class="form-control px-4"
+                                placeholder="Masukan Nama Kota. Misalnya, Jakarta" />
                             <button type="submit" class="btn btn-primary">Cari</button>
                         </form>
                     </div>
@@ -74,8 +75,13 @@
                                                                 mandi</span>
                                                         </span>
                                                     </div>
-                                                    <a href="{{ route('properties.show', $property->slug) }}"
-                                                        class="btn btn-primary py-2 px-3">Lihat detail</a>
+                                                    @if ($property->is_status == '1')
+                                                        <a href="{{ route('properties.show', $property->slug) }}"
+                                                            class="btn btn-primary py-2 px-3">Lihat detail</a>
+                                                    @else
+                                                        <button type="button" class="btn btn-danger py-2 px-3">Sudah
+                                                            Terjual</button>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -237,7 +243,7 @@
                 <div class="row section-counter mt-5 text-center">
                     <div class="col-6 col-sm-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="500">
                         <div class="counter-wrap mb-5 mb-lg-0">
-                            <span class="number"><span class="countup text-primary">9316</span></span>
+                            <span class="number"><span class="countup text-primary">{{ $propertiesCount }}</span></span>
                             <span class="caption text-black-50">Jumlah Properti</span>
                         </div>
                     </div>

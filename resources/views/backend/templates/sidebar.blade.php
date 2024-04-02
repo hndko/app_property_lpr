@@ -51,19 +51,19 @@
                 <div data-i18n="Basic">Ulasan</div>
             </a>
         </li>
-        <li class="menu-item {{ $master === 'Pengaturan Website' ? 'active' : '' }}">
+        <li class="menu-item {{ $master === 'Pengaturan Website' ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cog"></i>
                 <div data-i18n="Pengaturan Website">Pengaturan Website</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item {{ $pages === 'Whatsapp' ? 'active' : '' }}">
-                    <a href="" class="menu-link">
+                    <a href="{{ route('whatsapp') }}" class="menu-link">
                         <div data-i18n="Whatsapp">Whatsapp</div>
                     </a>
                 </li>
                 <li class="menu-item {{ $pages === 'Pengaturan Umum' ? 'active' : '' }}">
-                    <a href="" class="menu-link">
+                    <a href="{{ route('pengaturan-umum') }}" class="menu-link">
                         <div data-i18n="Pengaturan Umum">Pengaturan Umum</div>
                     </a>
                 </li>

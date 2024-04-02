@@ -19,6 +19,7 @@
                             <th>Kota</th>
                             <th>Agent</th>
                             <th>Harga</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -32,6 +33,13 @@
                                 <td>{{ $res->kota->nama_kota }}</td>
                                 <td>{{ $res->agent->nama_lengkap }}</td>
                                 <td>@rupiahIndo($res->harga)</td>
+                                <td>
+                                    @if ($res->is_status == '1')
+                                        <span class="text-success fw-bold">Ready</span>
+                                    @else
+                                        <span class="text-danger fw-bold">Sale</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm"
                                         onclick="window.location.href='{{ route('property.edit', $res->property_id) }}'">

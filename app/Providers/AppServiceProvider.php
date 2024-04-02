@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\PengaturanUmum;
+use App\Models\Whatsapp;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('rupiahIndo', function ($expression) {
             return "Rp. <?= number_format($expression,0,',','.'); ?>";
         });
+
+        View::share('whatsapp', Whatsapp::first());
+        View::share('setting', PengaturanUmum::first());
     }
 }

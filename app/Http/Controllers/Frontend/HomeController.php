@@ -18,6 +18,7 @@ class HomeController extends Controller
             'pages' => 'Home',
             'ulasan' => Ulasan::latest()->limit(20)->get(),
             'agentCount' => Agent::all()->count(),
+            'propertiesCount' => Property::all()->count(),
             'properties' => Property::latest()->limit(15)->get()
         ];
 

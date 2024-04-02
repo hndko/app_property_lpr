@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <title>
-    {{ $title }}
+    {{ $setting->nama_website }}
 </title>
 <style>
     /* Styles for WhatsApp floating button */
@@ -58,5 +58,32 @@
     .whatsapp-float:hover {
         background-color: #128c7e;
         color: #fff;
+    }
+
+    .rating {
+        display: inline-block;
+        unicode-bidi: bidi-override;
+        direction: rtl;
+    }
+
+    .rating input {
+        display: none;
+    }
+
+    .rating label {
+        float: right;
+        padding: 0 0.1em;
+        font-size: 30px;
+        color: #ccc;
+        cursor: pointer;
+    }
+
+    .rating input:checked~label {
+        color: #ffc107;
+    }
+
+    .rating label:hover,
+    .rating label:hover~label {
+        color: #ffdd47;
     }
 </style>

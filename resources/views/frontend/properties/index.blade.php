@@ -59,8 +59,13 @@
                                                                 mandi</span>
                                                         </span>
                                                     </div>
-                                                    <a href="{{ route('properties.show', $property->slug) }}"
-                                                        class="btn btn-primary py-2 px-3">Lihat detail</a>
+                                                    @if ($property->is_status == '1')
+                                                        <a href="{{ route('properties.show', $property->slug) }}"
+                                                            class="btn btn-primary py-2 px-3">Lihat detail</a>
+                                                    @else
+                                                        <button type="button" class="btn btn-danger py-2 px-3">Sudah
+                                                            Terjual</button>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -109,8 +114,13 @@
                                                             mandi</span>
                                                     </span>
                                                 </div>
-                                                <a href="{{ route('properties.show', $property->slug) }}"
-                                                    class="btn btn-primary py-2 px-3">Lihat detail</a>
+                                                @if ($property->is_status == '1')
+                                                    <a href="{{ route('properties.show', $property->slug) }}"
+                                                        class="btn btn-primary py-2 px-3">Lihat detail</a>
+                                                @else
+                                                    <button type="button" class="btn btn-danger py-2 px-3">Sudah
+                                                        Terjual</button>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
