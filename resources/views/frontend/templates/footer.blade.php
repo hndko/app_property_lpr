@@ -20,7 +20,7 @@
                     <ul class="list-unstyled float-start links">
                         <li><a href="{{ route('/') }}">Beranda</a></li>
                         <li><a href="{{ route('properties') }}">Properti</a></li>
-                        <li><a href="{{ route('agent') }}">Agen</a></li>
+                        <li><a href="{{ route('agent-properti') }}">Agen</a></li>
                         <li><a href="{{ route('contact') }}">Kontak Kami</a></li>
                     </ul>
                 </div>
