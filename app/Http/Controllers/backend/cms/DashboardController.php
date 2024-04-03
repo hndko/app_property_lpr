@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\backend\cms;
 
-use App\Http\Controllers\Controller;
+use App\Models\Agent;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Contact;
+use App\Models\Property;
+use App\Models\Ulasan;
 
 class DashboardController extends Controller
 {
@@ -16,6 +20,10 @@ class DashboardController extends Controller
             'title' => 'Dashboard',
             'master' => null,
             'pages' => 'Dashboard',
+            'agentCount' => Agent::all()->count(),
+            'propertyCount' => Property::all()->count(),
+            'contactCount' => Contact::all()->count(),
+            'ulasanCount' => Ulasan::all()->count(),
         ];
 
         return view('backend.cms.index', $data);

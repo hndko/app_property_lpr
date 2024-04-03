@@ -21,6 +21,13 @@
         </div>
 
         @if ($properties->isEmpty())
+            <div class="section section-properties">
+                <div class="container">
+                    <div class="col-12 text-center">
+                        <p>Belum ada data properti yang tersedia.</p>
+                    </div>
+                </div>
+            </div>
         @else
             <div class="section section-properties">
                 <div class="container">

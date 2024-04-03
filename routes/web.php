@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\cms\PropertyController as CMSPropertyController
 use App\Http\Controllers\backend\cms\SliderPropertyController as CMSSliderPropertyController;
 use App\Http\Controllers\backend\cms\WhatsappController as CMSWhatsappController;
 use App\Http\Controllers\backend\cms\PengaturanUmumController as CMSPengaturanUmumController;
+use App\Http\Controllers\backend\cms\AccountController as CMSAccountController;
 use App\Http\Controllers\Frontend\AgentController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -125,6 +126,11 @@ Route::middleware([Authenticate::class])->group(function () {
         Route::prefix('pengaturan-umum')->group(function () {
             Route::get('/', [CMSPengaturanUmumController::class, 'index'])->name('pengaturan-umum');
             Route::put('update/{id}', [CMSPengaturanUmumController::class, 'update'])->name('pengaturan-umum.update');
+        });
+
+        Route::prefix('account')->group(function () {
+            Route::get('/', [CMSAccountController::class, 'index'])->name('account');
+            Route::put('update/{id}', [CMSAccountController::class, 'update'])->name('account.update');
         });
     });
 });

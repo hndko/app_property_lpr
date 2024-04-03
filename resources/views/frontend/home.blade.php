@@ -40,7 +40,7 @@
                     <div class="col-lg-6 text-lg-end">
                         <p>
                             <a href="{{ route('properties') }}" target="_blank"
-                                class="btn btn-primary text-white py-3 px-4">Lihat semua
+                                class="btn btn-primary btn-sm text-white py-3 px-4">Lihat semua
                                 properti</a>
                         </p>
                     </div>
