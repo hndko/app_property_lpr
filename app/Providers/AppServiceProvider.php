@@ -26,8 +26,5 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('rupiahIndo', function ($expression) {
             return "Rp. <?= number_format($expression,0,',','.'); ?>";
         });
-
-        View::share('whatsapp', Whatsapp::first());
-        View::share('setting', PengaturanUmum::first());
     }
 }

@@ -6,6 +6,8 @@
         <div class="card">
             <h5 class="card-header">Responsive Table</h5>
             <div class="card-body table-responsive text-nowrap">
+                @dump(auth()->user())
+
                 <table class="table" id="dataTable">
                     <thead>
                         <tr class="text-nowrap">
