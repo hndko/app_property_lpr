@@ -31,27 +31,29 @@
 
         <section class="section">
             <div class="container">
-                <div class="row mb-5 align-items-center">
-                    <div class="col-lg-6">
-                        <h2 class="font-weight-bold text-primary heading">
-                            Properti Terbaru
-                        </h2>
+                @if ($properties->isEmpty())
+                    <div class="row align-items-center justify-content-center h3">
+                        Properti Belum Tersedia
                     </div>
-                    <div class="col-lg-6 text-lg-end">
-                        <p>
-                            <a href="{{ route('properties') }}" target="_blank"
-                                class="btn btn-primary btn-sm text-white py-3 px-4">Lihat semua
-                                properti</a>
-                        </p>
+                @else
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-lg-6">
+                            <h2 class="font-weight-bold text-primary heading">
+                                Properti Terbaru
+                            </h2>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <p>
+                                <a href="{{ route('properties') }}" target="_blank"
+                                    class="btn btn-primary btn-sm text-white py-3 px-4">Lihat semua
+                                    properti</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="property-slider-wrap">
-                            <div class="property-slider">
-                                @if ($properties->isEmpty())
-                                    Properti Belum Tersedia
-                                @else
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="property-slider-wrap">
+                                <div class="property-slider">
                                     @foreach ($properties as $property)
                                         <div class="property-item">
                                             <a href="{{ route('properties.show', $property->slug) }}" class="img">
@@ -86,17 +88,17 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                @endif
-                            </div>
-                            <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
-                                <span class="prev" data-controls="prev" aria-controls="property"
-                                    tabindex="-1">Sebelumnya</span>
-                                <span class="next" data-controls="next" aria-controls="property"
-                                    tabindex="-1">Selanjutnya</span>
+                                </div>
+                                <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+                                    <span class="prev" data-controls="prev" aria-controls="property"
+                                        tabindex="-1">Sebelumnya</span>
+                                    <span class="next" data-controls="next" aria-controls="property"
+                                        tabindex="-1">Selanjutnya</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
         </section>
 
@@ -133,32 +135,27 @@
 
         <div class="section sec-testimonials">
             <div class="container">
-                <div class="row mb-5 align-items-center">
-                    <div class="col-md-6">
-                        <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">
-                            Ulasan Pelanggan
-                        </h2>
+                @if ($ulasan->isEmpty())
+                    <div class="row align-items-center justify-content-center h3">
+                        Maaf, belum ada ulasan
                     </div>
-                    <div class="col-md-6 text-md-end">
-                        <div id="testimonial-nav">
-                            <span class="prev" data-controls="prev">Sebelumnya</span>
-                            <span class="next" data-controls="next">Selanjutnya</span>
+                @else
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">
+                                Ulasan Pelanggan
+                            </h2>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <div id="testimonial-nav">
+                                <span class="prev" data-controls="prev">Sebelumnya</span>
+                                <span class="next" data-controls="next">Selanjutnya</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-lg-4"></div>
-                </div>
-                <div class="testimonial-slider-wrap">
-                    <div class="testimonial-slider">
-                        @if ($ulasan->isEmpty())
-                            <div class="item">
-                                <div class="testimonial">
-                                    <p>Maaf, belum ada ulasan.</p>
-                                </div>
-                            </div>
-                        @else
+                    <div class="testimonial-slider-wrap">
+                        <div class="testimonial-slider">
                             @foreach ($ulasan as $ulasanItem)
                                 <div class="item">
                                     <div class="testimonial">
@@ -177,9 +174,9 @@
                                     </div>
                                 </div>
                             @endforeach
-                        @endif
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
 
