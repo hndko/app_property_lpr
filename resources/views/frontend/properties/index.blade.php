@@ -22,20 +22,22 @@
 
         <div class="section">
             <div class="container">
-                <div class="row mb-5 align-items-center">
-                    <div class="col-lg-6 text-center mx-auto">
-                        <h2 class="font-weight-bold text-primary heading">
-                            Properti Terbaru
-                        </h2>
+                @if ($properties->isEmpty())
+                    <div class="row align-items-center justify-content-center h3">
+                        Properti Belum Tersedia
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="property-slider-wrap">
-                            <div class="property-slider">
-                                @if ($properties->isEmpty())
-                                    Properti Belum Tersedia
-                                @else
+                @else
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-lg-6 text-center mx-auto">
+                            <h2 class="font-weight-bold text-primary heading">
+                                Properti Terbaru
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="property-slider-wrap">
+                                <div class="property-slider">
                                     @foreach ($properties as $property)
                                         <div class="property-item">
                                             <a href="{{ route('properties.show', $property->slug) }}" class="img">
@@ -70,17 +72,17 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                @endif
-                            </div>
-                            <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
-                                <span class="prev" data-controls="prev" aria-controls="property"
-                                    tabindex="-1">Sebelumnya</span>
-                                <span class="next" data-controls="next" aria-controls="property"
-                                    tabindex="-1">Selanjutnya</span>
+                                </div>
+                                <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+                                    <span class="prev" data-controls="prev" aria-controls="property"
+                                        tabindex="-1">Sebelumnya</span>
+                                    <span class="next" data-controls="next" aria-controls="property"
+                                        tabindex="-1">Selanjutnya</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
 
