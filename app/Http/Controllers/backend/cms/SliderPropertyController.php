@@ -15,12 +15,18 @@ class SliderPropertyController extends Controller
      */
     public function index(String $id)
     {
+        // Cari property berdasarkan ID
+        $property = Property::findOrFail($id);
+
+        // Ambil semua slider yang terkait dengan property_id ini
+        $sliders = $property->sliders;
+
         $data = [
             'title' => 'Slider Property',
             'master' => null,
             'pages' => 'Property',
-            'property' => Property::findOrFail($id),
-            'result' => SliderProperty::all()
+            'property' => $property,
+            'result' => $sliders
         ];
 
         return view('backend.cms.property.slider.index', $data);
